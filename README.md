@@ -1,4 +1,6 @@
-# mai-rmelab
+## balkanoche-prison-simulator
+
+Calculateur de temps de prison sur l'échelle Balkanoche
 
 ## Project setup
 ```
