@@ -1,8 +1,6 @@
 <template>
   <div class="main">
     <div class="countdown">
-      <BeerImage :currentBeer="currentBeer" />
-      <h3>Temps restant avant la fiesta :</h3>
       <table>
         <tr class="numbers">
           <td class="table-margin"></td>
@@ -24,6 +22,7 @@
           >
             {{ formatTime(seconds) }}
           </td>
+          <td class="table-prison"> en prison</td>
           <td class="table-margin"></td>
         </tr>
         <tr class="labels">
@@ -32,14 +31,8 @@
           <td>heure{{ hours > 1 ? "s" : "" }}</td>
           <td>minute{{ minutes > 1 ? "s" : "" }}</td>
           <td>seconde{{ seconds > 1 ? "s" : "" }}</td>
+          <td class="table-prison"></td>
           <td class="table-margin"></td>
-        </tr>
-        <tr>
-          <td class="road-td" colspan="6">
-            <BusImage :currentPos="currentPos" class="bus" />
-            <img class="road" alt="Road" src="../assets/road.jpg" />
-            <img class="mountain" alt="Mountain" src="../assets/mountain.png" />
-          </td>
         </tr>
       </table>
     </div>
@@ -47,40 +40,25 @@
 </template>
 
 <script>
-import BusImage from "./BusImage.vue";
-import BeerImage from "./BeerImage.vue";
 
 export default {
-  name: "CountDown",
-  components: {
-    BusImage,
-    BeerImage,
-  },
-  props: {
-    startbus: {
-      type: Number,
-      default: 2600000000,
+    name: "CountDown",
+    props: {
+        crime: {
+            type: String,
+            required: true,
+        },
     },
-    deadline: {
-      type: String,
-      required: true,
+    data: function () {
+        return {
+            currentTime: this.computeTime(parseInt(this.crime)),
+        };
     },
-    speed: {
-      type: Number,
-      default: 1000,
+    watch: {
+        crime: function(val) {
+            this.currentTime= this.computeTime(parseInt(val));
+        },
     },
-  },
-  data: function () {
-    return {
-      currentTime: null,
-      currentPos: 0,
-      currentBeer: 0,
-      maxPos: 100,
-    };
-  },
-  mounted() {
-    setTimeout(this.countdown, 1);
-  },
   computed: {
     seconds() {
       return Math.floor((this.currentTime / 1000) % 60);
@@ -102,22 +80,9 @@ export default {
       }
       return value;
     },
-    countdown() {
-      this.currentTime = Date.parse(this.deadline) - Date.parse(new Date());
-      this.currentPos =
-        this.currentTime > this.startbus
-          ? 0
-          : this.currentTime <= 0 || !this.currentTime
-          ? this.maxPos
-          : this.maxPos -
-            Math.floor((this.currentTime / this.startbus) * this.maxPos);
-      if (this.currentTime > 0) {
-        setTimeout(this.countdown, this.speed);
-      } else {
-        this.currentTime = null;
-        this.currentPos = 0;
-      }
-      this.currentBeer = Math.floor((this.currentPos / this.maxPos) * 9);
+    computeTime(value) {
+        const ratio = 331/13000000;
+        return value*ratio*24*60*60*1000;
     },
   },
 };
@@ -134,11 +99,11 @@ export default {
 .countdown {
   display: flex;
   flex-direction: column;
-  width: 700px;
+  width: 800px;
 }
 
 .numbers {
-  font-size: 60px;
+  font-size: 50px;
   color: red;
   vertical-align: bottom;
 }
@@ -149,7 +114,7 @@ export default {
 
 @media (max-width: 1250px) {
   .numbers {
-    font-size: 45px;
+    font-size: 40px;
   }
 }
 
@@ -158,51 +123,18 @@ export default {
 }
 
 .days {
-  font-size: 100px;
+  font-size: 80px;
   color: brown;
   vertical-align: bottom;
-  line-height: 100px;
-}
-
-.road-td {
-  position: relative;
-}
-
-img.road {
-  margin-top: 50px;
-  height: 50px;
-  width: 100%;
-}
-
-.bus {
-  left: 0;
-}
-
-@media (max-width: 1250px) {
-  img.road {
-    margin-left: -10px;
-    width: calc(100% + 20px);
-  }
-}
-
-img.mountain {
-  height: 130px;
-  margin-top: -5px;
-  margin-left: -80px;
-  position: absolute;
-}
-
-@media (max-width: 1250px) {
-  img.mountain {
-    right: 0;
-    margin-top: -110px;
-    margin-left: unset;
-    margin-right: -50px;
-  }
+  line-height: 80px;
 }
 
 .table-margin {
-  width: 100px;
+  width: 50px;
+}
+
+.table-prison {
+  width: 210px;
 }
 
 @media (max-width: 1250px) {

@@ -15,6 +15,8 @@ export default {
 
 <style scoped>
 h1 {
-  margin: 40px 0 0;
+  margin: 0 40px;
+  line-height: 100px;
+  color: black;
 }
 </style>

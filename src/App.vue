@@ -1,21 +1,22 @@
 <template>
-  <img class="back" alt="Vosges" src="./assets/back-light.jpeg" />
+  <img class="back" alt="Fence" src="./assets/open-fence.jpg" /> <TopBanner />
   <div class="content">
-    <img alt="Marmelab logo" src="./assets/logo-green.png" />
-    <TitleMessage msg="En mai, on fait ce qui nous plait !" />
-    <CountDown deadline="2022-05-11T15:30:00.000Z" />
+    <TimeCalculator />
   </div>
+  <BottomBanner />
 </template>
 
 <script>
-import TitleMessage from "./components/TitleMessage.vue";
-import CountDown from "./components/CountDown.vue";
+import TopBanner from "./components/TopBanner.vue";
+import BottomBanner from "./components/BottomBanner.vue";
+import TimeCalculator from "./components/TimeCalculator.vue";
 
 export default {
   name: "App",
   components: {
-    TitleMessage,
-    CountDown,
+    TopBanner,
+    BottomBanner,
+    TimeCalculator,
   },
 };
 </script>
@@ -27,7 +28,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  padding-top: 60px;
+  padding-top: 0px;
 }
 
 @media (max-width: 1250px) {
@@ -37,9 +38,10 @@ export default {
 }
 
 .back {
-  width: calc(100% - 60px);
-  margin: 30px;
+  width: 100%;
+  margin: 0;
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
   filter: contrast(40%) blur(5px) brightness(1.5);
@@ -55,5 +57,6 @@ export default {
 
 .content {
   position: relative;
+  margin-top: 150px;
 }
 </style>
