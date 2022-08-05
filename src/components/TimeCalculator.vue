@@ -1,8 +1,8 @@
 <template>
   <div class="main">
     <div class="data">
-      <h1>Découvrez combien vous risquez en appliquant la jurisprudence Balkanoche 2019-2022</h1>
-      <h1>Si vous avez commis :</h1>
+      <h1>Calculez la durée de votre peine de prison grâce à la jurisprudence Balkanoche 2019-2022</h1>
+      <h1>Délit commis :</h1>
         <select v-model="crime">
             <option value="13000000">Le détournement de 13 millions d'euros</option>
             <option value="30000">Un cambriolage dans un quartier riche</option>
@@ -12,7 +12,8 @@
             <option value="20">Un petit vol dans un magasin</option>
             <option value="10">Un stationnement sans payer</option>
         </select>
-      <h1>Vous risquez de passer :</h1>
+      <h3>(Soit un vol estimé d'une valeur d'environ {{ crime }} € )</h3>
+      <h1>Peine à exécuter :</h1>
       <CountDown :crime="crime" />
     </div>
   </div>
@@ -57,6 +58,20 @@ export default {
 select {
     font-size: 30px;
     width: 650px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: solid 3px #FF8C00;
+    padding: 10px;
+    color: black;
+    outline: none;
+};
+
+select::active {
+    outline: none !important;
+};
+
+select::focus {
+    outline: none !important;
 };
 
 @media (max-width: 1250px) {

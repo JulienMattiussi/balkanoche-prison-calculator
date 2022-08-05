@@ -27,7 +27,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
   padding-top: 0px;
 }
 
@@ -44,7 +44,7 @@ export default {
   z-index: 0;
   top: 0;
   left: 0;
-  filter: contrast(40%) blur(5px) brightness(1.5);
+  filter: contrast(10%) blur(1px) brightness(2);
 }
 
 @media (max-width: 1250px) {

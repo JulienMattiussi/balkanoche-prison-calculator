@@ -4,14 +4,15 @@
       <table>
         <tr class="numbers">
           <td class="table-margin"></td>
-          <td :class="days === 0 ? 'reached' : ''" class="days">{{ days }}</td>
+          <td :class="years === 0 ? 'reached' : ''" class="years">{{ years }}</td>
+          <td :class="days === 0 ? 'reached' : ''">{{ days }}</td>
           <td :class="days === 0 && hours === 0 ? 'reached' : ''">
             {{ hours }}
           </td>
           <td
             :class="days === 0 && hours === 0 && minutes === 0 ? 'reached' : ''"
           >
-            {{ formatTime(minutes) }}
+            {{ minutes }}
           </td>
           <td
             :class="
@@ -20,13 +21,14 @@
                 : ''
             "
           >
-            {{ formatTime(seconds) }}
+            {{ seconds }}
           </td>
-          <td class="table-prison"> en prison</td>
+          <td class="table-prison"> de prison</td>
           <td class="table-margin"></td>
         </tr>
         <tr class="labels">
           <td class="table-margin"></td>
+          <td>an{{ years > 1 ? "s" : "" }}</td>
           <td>jour{{ days > 1 ? "s" : "" }}</td>
           <td>heure{{ hours > 1 ? "s" : "" }}</td>
           <td>minute{{ minutes > 1 ? "s" : "" }}</td>
@@ -72,14 +74,11 @@ export default {
     days() {
       return Math.floor(this.currentTime / (1000 * 60 * 60 * 24));
     },
+    years() {
+      return Math.floor(this.currentTime / (1000 * 60 * 60 * 24 ) / 365);
+    },
   },
   methods: {
-    formatTime(value) {
-      if (value < 10) {
-        return "0" + value;
-      }
-      return value;
-    },
     computeTime(value) {
         const ratio = 331/13000000;
         return value*ratio*24*60*60*1000;
@@ -122,7 +121,7 @@ export default {
   font-size: 20px;
 }
 
-.days {
+.years {
   font-size: 80px;
   color: brown;
   vertical-align: bottom;

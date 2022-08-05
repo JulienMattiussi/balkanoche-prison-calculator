@@ -2,7 +2,7 @@
   <div class="banner">
     <img alt="Marmelab logo" src="../assets/prisonner.png" />
     <TitleMessage
-      msg="Calculateur de temps de prison sur l'échelle Balkanoche"
+      msg="Balkanoche Prison Calculator"
     />
     <img alt="Marmelab logo" src="../assets/free.png" />
   </div>

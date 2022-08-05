@@ -1,8 +1,8 @@
 <template>
   <div class="banner">
     <span class="left">
-        <p>Les données ont été calculées grâce aux informations trouvées sur <a href="https://fr.wikipedia.org/wiki/Affaire_Balkany" target="Affaire Balkany">Wikipedia</a></p>
-        <p>Elles ne constituent absolument pas une réalité juridique. Fiez vous à <a href="https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006070719/"  target="Code pénal">Legifrance</a> pour ça</p>
+        <p>Les données ont été calculées grâce aux informations trouvées sur <a href="https://fr.wikipedia.org/wiki/Affaire_Balkany" target="Affaire Balkany">Wikipedia</a> - Ratio de temps de prison de 2.19 secondes par euros volé</p>
+        <p>Ce calculateur ne constitue absolument pas une réalité juridique. Fiez vous à <a href="https://www.legifrance.gouv.fr/codes/id/LEGITEXT000006070719/"  target="Code pénal">Legifrance</a> pour ça</p>
     </span>
     <span class="right">
         <a href="https://twitter.com/YavaDeus" target="twiter">A propos de moi</a>
