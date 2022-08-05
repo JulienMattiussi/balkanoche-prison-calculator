@@ -33,7 +33,7 @@ export default {
   background-size: 100%;
   background-position: top;
   background-clip: content-box;
-  background-image:url(./assets/open-fence_light.jpg);
+  background-image:url(~@/assets/open-fence_light.jpg);
   height: 100vh;
 }
 
