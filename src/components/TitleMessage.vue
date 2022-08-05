@@ -26,6 +26,12 @@ export default {
     border-right: solid black 6px;
 }
 
+@media (max-width: 1250px) {
+    .title {
+        flex-direction: column;
+    }
+}
+
 .word {
     display: flex;
     flex-direction: row;
@@ -41,8 +47,22 @@ h1 {
   color: black;
 }
 
+@media (max-width: 1250px) {
+    h1 {
+        font-size: 22px;
+        line-height: 22px;
+    }
+}
+
 .message {
     border-top: solid black 4px;
     margin: 10px;
 }
+
+@media (max-width: 1250px) {
+    .message {
+        margin: 30px;
+    }
+}
+
 </style>

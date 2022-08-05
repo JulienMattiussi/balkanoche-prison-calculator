@@ -1,6 +1,6 @@
 <template>
-  <div class="main">
-    <div class="data">
+  <div class="container">
+    <div class="contained">
       <h1>Calculez la durée de votre peine de prison grâce à la jurisprudence Balkanoche 2019-2022</h1>
       <h1>Délit commis :</h1>
         <select v-model="crime">
@@ -41,18 +41,25 @@ export default {
 </script>
 
 <style scoped>
-.main {
+.container {
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin: 10px 0 0;
+  width: calc(100% - 20px);
+  margin: 0 10px;
 }
 
-.data {
+.contained {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   width: 800px;
+}
+
+@media (max-width: 1250px) {
+    .contained {
+        width: 100%;
+        height: 900px;
+    }
 }
 
 select {
@@ -73,10 +80,4 @@ select::active {
 select::focus {
     outline: none !important;
 };
-
-@media (max-width: 1250px) {
-  .numbers {
-    font-size: 40px;
-  }
-}
 </style>

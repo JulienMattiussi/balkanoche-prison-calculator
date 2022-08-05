@@ -30,6 +30,12 @@ export default {
     border-top: solid black 4px;
 }
 
+@media (max-width: 1250px) {
+    .banner {
+        position: relative;
+    }
+}
+
 .left {
     display: flex;
     flex-direction: column;

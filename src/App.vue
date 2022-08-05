@@ -33,7 +33,8 @@ export default {
 
 @media (max-width: 1250px) {
   #app {
-    padding-top: 10px;
+     height: 1800px;
+     min-height: 1800px;
   }
 }
 
@@ -48,15 +49,21 @@ export default {
 }
 
 @media (max-width: 1250px) {
-  .back {
-    margin: -10px;
-    height: calc(100% + 20px);
-    width: unset;
-  }
+    .content {
+        min-height: 800px;
+    }
 }
 
 .content {
   position: relative;
   margin-top: 150px;
+}
+
+@media (max-width: 1250px) {
+    .content {
+        margin-top: 110px;
+        font-size: 12px;
+        line-height: 25px;
+    }
 }
 </style>

@@ -92,6 +92,7 @@ export default {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 800px;
   margin: 10px 0 0;
 }
 
