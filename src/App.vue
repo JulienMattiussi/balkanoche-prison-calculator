@@ -46,13 +46,17 @@ export default {
   z-index: 0;
   top: 0;
   left: 0;
-  //filter: contrast(10%) blur(1px) brightness(2);
 }
 
 .content {
   position: relative;
   margin-top: 150px;
   overflow:hidden;
+  background-size: cover;
+  background-position: top;
+  background-clip: content-box;
+  background-image:url(assets/open-fence_light.jpg);
+  height: 100vh;
 }
 
 @media (max-width: 1250px) {
@@ -60,6 +64,8 @@ export default {
         margin-top: 110px;
         font-size: 12px;
         line-height: 25px;
+        background-size: contains;
+        height: 100%;
     }
 }
 </style>
