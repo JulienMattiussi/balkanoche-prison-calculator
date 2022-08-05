@@ -92,7 +92,6 @@ export default {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 800px;
   margin: 10px 0 0;
 }
 
@@ -114,7 +113,7 @@ export default {
 
 @media (max-width: 1250px) {
   .numbers {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -122,11 +121,24 @@ export default {
   font-size: 20px;
 }
 
+@media (max-width: 1250px) {
+  .labels {
+    font-size: 15px;
+  }
+}
+
 .years {
   font-size: 80px;
   color: brown;
   vertical-align: bottom;
   line-height: 80px;
+}
+
+@media (max-width: 1250px) {
+  .years {
+    font-size: 60px;
+    line-height: 40px;
+  }
 }
 
 .table-margin {

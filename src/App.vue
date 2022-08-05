@@ -1,5 +1,5 @@
 <template>
-  <img class="back" alt="Fence" src="./assets/open-fence.jpg" /> <TopBanner />
+  <TopBanner />
   <div class="content">
     <TimeCalculator />
   </div>
@@ -29,12 +29,17 @@ export default {
   text-align: center;
   color: black;
   padding-top: 0px;
+  overflow: hidden;
+  background-size: 100%;
+  background-position: top;
+  background-clip: content-box;
+  background-image:url(./assets/open-fence_light.jpg);
+  height: 100vh;
 }
 
 @media (max-width: 1250px) {
   #app {
-     height: 1800px;
-     min-height: 1800px;
+    height: auto;
   }
 }
 
@@ -45,18 +50,13 @@ export default {
   z-index: 0;
   top: 0;
   left: 0;
-  filter: contrast(10%) blur(1px) brightness(2);
-}
-
-@media (max-width: 1250px) {
-    .content {
-        min-height: 800px;
-    }
+  //filter: contrast(10%) blur(1px) brightness(2);
 }
 
 .content {
   position: relative;
   margin-top: 150px;
+  overflow:hidden;
 }
 
 @media (max-width: 1250px) {

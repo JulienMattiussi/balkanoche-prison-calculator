@@ -32,6 +32,14 @@ export default {
 
 @media (max-width: 1250px) {
     .banner {
+        font-size: 10px;
+        flex-direction: column;
+        height: 50px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .banner {
         position: relative;
     }
 }

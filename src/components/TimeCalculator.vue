@@ -3,7 +3,7 @@
     <div class="contained">
       <h1>Calculez la durée de votre peine de prison grâce à la jurisprudence Balkanoche 2019-2022</h1>
       <h1>Délit commis :</h1>
-        <select v-model="crime">
+        <select class="selector" v-model="crime">
             <option value="13000000">Le détournement de 13 millions d'euros</option>
             <option value="30000">Un cambriolage dans un quartier riche</option>
             <option value="100000">Une douzaine de cambriolages divers</option>
@@ -58,11 +58,17 @@ export default {
 @media (max-width: 1250px) {
     .contained {
         width: 100%;
-        height: 900px;
     }
 }
 
-select {
+@media (max-width: 1250px) {
+    .selector {
+        font-size: 15px !important;
+        width: 100% !important;
+    }
+}
+
+.selector {
     font-size: 30px;
     width: 650px;
     background-color: transparent;
@@ -73,6 +79,8 @@ select {
     outline: none;
 };
 
+
+
 select::active {
     outline: none !important;
 };
@@ -80,4 +88,5 @@ select::active {
 select::focus {
     outline: none !important;
 };
+
 </style>
