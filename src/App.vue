@@ -30,6 +30,9 @@ export default {
   color: black;
   padding-top: 0px;
   overflow: hidden;
+  background-size: 100%;
+  background-position: top;
+  background-clip: content-box;
   height: 100vh;
 }
 
