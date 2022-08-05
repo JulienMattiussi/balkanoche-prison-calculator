@@ -56,7 +56,7 @@ export default {
   background-position: top;
   background-clip: content-box;
   background-image:url(assets/open-fence_light.jpg);
-  height: 100vh;
+  height: calc(100vh - 200px);
 }
 
 @media (max-width: 1250px) {
