@@ -30,7 +30,7 @@ export default {
   color: black;
   padding-top: 0px;
   overflow: hidden;
-  background-size: 100%;
+  background-image: url(~@/assets/open-fence_light.jpg);
   height: 100vh;
 }
 
