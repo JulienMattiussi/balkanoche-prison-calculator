@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://balkanoche-prison-calculator.yavadeus.dev/sitemap.xml
